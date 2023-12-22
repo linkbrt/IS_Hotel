@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfApp1.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="720" Width="1200">
+    <Grid>
+        <TabControl x:Name="tabControl">
+            <TabItem Header="Забронировать">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="21*"/>
+                        <ColumnDefinition Width="376*"/>
+                    </Grid.ColumnDefinitions>
+                    <DatePicker x:Name="datePickerFrom" Margin="118,59,762,557" 
+                                Grid.Column="1" FirstDayOfWeek="Monday" SelectedDateFormat="Short" CalendarClosed="datePickerFrom_CalendarClosed"/>
+                    <DatePicker x:Name="datePickerTo" Margin="118,135,762,472" 
+                                Grid.Column="1" FirstDayOfWeek="Monday" SelectedDateFormat="Short" CalendarClosed="datePickerTo_CalendarClosed"/>
+                    <Label x:Name="label" Content="Дата заезда:" Margin="63,59,777,546" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label1" Content="Дата выезда:" Margin="63,135,1013,487" Grid.ColumnSpan="2"/>
+                    <ListView x:Name="roomsListView" Margin="383,59,312,257" Grid.Column="1" SelectionChanged="roomsListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                        <ListViewItem Content="ListViewItem"/>
+                        <ListViewItem Content="ListViewItem"/>
+                    </ListView>
+                    <Button x:Name="orderRoomButton" Content="Оставить заявку" Margin="859,59,122,557" Grid.Column="1" IsEnabled="False" Click="orderRoomButton_Click"/>
+                    <Label x:Name="label1_Копировать" Content="Кол-во человек:" Margin="63,212,1013,410" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label1_Копировать1" Content="" Margin="299,215,762,407" Grid.Column="1" RenderTransformOrigin="0.427,0.833"/>
+                    <Slider x:Name="slider" Margin="118,212,837,404" Grid.Column="1" Minimum="1" SmallChange="1" Value="1" TickPlacement="Both" AutoToolTipPlacement="BottomRight" ValueChanged="slider_ValueChanged"/>
+                    <Button x:Name="findRoomButton" Content="Найти" Margin="63,283,1013,338" Grid.ColumnSpan="2" Click="findRoomButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Мои бронирования">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem HorizontalAlignment="Center" Height="20" Header="Личные данные" VerticalAlignment="Top" Width="100" Margin="0,-1,0,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="257*"/>
+                        <ColumnDefinition Width="537*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
