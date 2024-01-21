@@ -13,10 +13,10 @@ namespace WpfApp1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class hotelDbEntities : DbContext
+    public partial class hoteldbEntities : DbContext
     {
-        public hotelDbEntities()
-            : base("name=hotelDbEntities")
+        public hoteldbEntities()
+            : base("name=hoteldbEntities")
         {
         }
     
@@ -26,13 +26,8 @@ namespace WpfApp1
         }
     
         public DbSet<customer> customers { get; set; }
-        public DbSet<employee> employees { get; set; }
-        public DbSet<hotel> hotels { get; set; }
         public DbSet<reservation> reservations { get; set; }
         public DbSet<room> rooms { get; set; }
-        public DbSet<service> services { get; set; }
-        public DbSet<service_reservation> service_reservation { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<user> users { get; set; }
     }
 }

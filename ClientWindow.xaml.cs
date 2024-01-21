@@ -19,6 +19,7 @@ namespace WpfApp1 {
             InitializeComponent();
             datePickerFrom.DisplayDateStart = DateTime.Now;
             datePickerTo.DisplayDateStart = DateTime.Now;
+            this.Title += App.CurrentUser.login;
         }
 
         private void roomsListView_SelectionChanged(object sender, SelectionChangedEventArgs e) {

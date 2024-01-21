@@ -7,6 +7,40 @@
         mc:Ignorable="d"
         Title="Окно менеджера" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Управление бронированиями">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,54,0,166"/>
+                    <Button Content="Сохранить" Margin="52,280,632,80" FontSize="14">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65EC1C"/>
+                                <GradientStop Color="#FFC9EFB4" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="Добавить" Margin="342,280,342,80" Background="#FFA3F1FB"/>
+                    <Button Content="Удалить" Margin="633,280,51,80">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE68080" Offset="0.203"/>
+                                <GradientStop Color="#FFFB5151" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Учетные записи">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Управление персоналом">
+                <Grid Background="#FFE5E5E5">
+                </Grid>
+            </TabItem>
+            <TabItem Header="Отчетность и аналитика">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

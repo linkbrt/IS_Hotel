@@ -17,17 +17,12 @@ namespace WpfApp1
         public room()
         {
             this.reservations = new HashSet<reservation>();
-            this.service_reservation = new HashSet<service_reservation>();
         }
     
         public int id { get; set; }
         public string number { get; set; }
         public decimal price { get; set; }
-        public int hotel_id { get; set; }
-        public int person { get; set; }
     
-        public virtual hotel hotel { get; set; }
         public virtual ICollection<reservation> reservations { get; set; }
-        public virtual ICollection<service_reservation> service_reservation { get; set; }
     }
 }

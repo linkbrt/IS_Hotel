@@ -18,6 +18,7 @@ namespace WpfApp1
         public System.DateTime date { get; set; }
         public int customer_id { get; set; }
         public int room_id { get; set; }
+        public int persons { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual room room { get; set; }

@@ -7,17 +7,19 @@
         mc:Ignorable="d"
         Title="Вход" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="63"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <StackPanel x:Name="LoginPanel" Grid.ColumnSpan="2" d:IsHidden="True">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/main.jpg"/>
+            </StackPanel.Background>
             <TextBox x:Name="LoginTextBox" TextWrapping="Wrap" Text="" Width="120" HorizontalAlignment="Center" Margin="0,150,0,10" AutomationProperties.HelpText="Login"/>
             <TextBox x:Name="PasswordTextBox" TextWrapping="Wrap" Text="" Width="120" HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <Button x:Name="LoginButton" Content="Вход" RenderTransformOrigin="0.5,0.5" Click="LoginButton_Click" Height="31" Width="120" HorizontalAlignment="Center" Margin="0,0,0,10" Background="#FFDDFFBD"/>
             <Button x:Name="ToRegisterPageButton" Content="Регистрация" Width="120" Click="ToRegisterButton_Click" HorizontalAlignment="Center" Background="#FFD7F2FD"/>
         </StackPanel>
         <StackPanel x:Name="RegistrationPanel" Grid.ColumnSpan="2">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/main.jpg"/>
+            </StackPanel.Background>
             <TextBox x:Name="newLoginBox" TextWrapping="Wrap" Text="" Width="120" Margin="0,150,0,10"/>
             <PasswordBox x:Name="passwordBoxNew1" Width="120" Margin="0,0,0,10"/>
             <PasswordBox x:Name="passwordBoxNew2" Width="120" Margin="0,0,0,10"/>

@@ -19,20 +19,19 @@ namespace WpfApp1 {
     /// Логика взаимодействия для AdminWindow.xaml
     /// </summary>
     public partial class AdminWindow : Window {
-        hotelDbEntities db;
+        hoteldbEntities db = new hoteldbEntities();
         Dictionary<string, DbSet> data;
-        public AdminWindow(hotelDbEntities db) {
+        public AdminWindow() {
             InitializeComponent();
-            this.db = db;
             this.data = new Dictionary<string, DbSet>() {
                 { "user", db.users },
                 { "customer", db.customers },
-                { "employee", db.employees },
-                { "hotel", db.hotels },
+                //{ "employee", db.employees },
+                //{ "hotel", db.hotels },
                 { "room", db.rooms },
                 { "reservation", db.reservations },
-                { "service", db.services },
-                { "service_reservation", db.service_reservation },
+                //{ "service", db.services },
+                //{ "service_reservation", db.service_reservation },
             };
 
             modelBox.ItemsSource = data.Keys;

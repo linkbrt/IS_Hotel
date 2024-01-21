@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="720" Width="1200">
+        Title="Окно Клиента " Height="720" Width="1200">
     <Grid>
         <TabControl x:Name="tabControl">
             <TabItem Header="Забронировать">
@@ -42,9 +42,11 @@
             <TabItem HorizontalAlignment="Center" Height="20" Header="Личные данные" VerticalAlignment="Top" Width="100" Margin="0,-1,0,0">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="257*"/>
-                        <ColumnDefinition Width="537*"/>
+                        <ColumnDefinition Width="74*"/>
+                        <ColumnDefinition Width="119*"/>
+                        <ColumnDefinition Width="404*"/>
                     </Grid.ColumnDefinitions>
+                    <TextBox x:Name="loginTextBox" TextWrapping="Wrap" Margin="141,29,141,620" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
         </TabControl>

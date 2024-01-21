@@ -17,7 +17,6 @@ namespace WpfApp1
         public customer()
         {
             this.reservations = new HashSet<reservation>();
-            this.service_reservation = new HashSet<service_reservation>();
         }
     
         public int id { get; set; }
@@ -29,6 +28,5 @@ namespace WpfApp1
     
         public virtual user user { get; set; }
         public virtual ICollection<reservation> reservations { get; set; }
-        public virtual ICollection<service_reservation> service_reservation { get; set; }
     }
 }

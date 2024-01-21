@@ -11,5 +11,6 @@ namespace WpfApp1 {
     /// Логика взаимодействия для App.xaml
     /// </summary>
     public partial class App : Application {
+        public static user CurrentUser { get; set; }
     }
 }

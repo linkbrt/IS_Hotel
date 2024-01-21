@@ -17,15 +17,13 @@ namespace WpfApp1
         public user()
         {
             this.customers = new HashSet<customer>();
-            this.employees = new HashSet<employee>();
         }
     
         public int id { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-        public Nullable<int> role { get; set; }
+        public int role { get; set; }
     
         public virtual ICollection<customer> customers { get; set; }
-        public virtual ICollection<employee> employees { get; set; }
     }
 }

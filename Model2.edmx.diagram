@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="73a73eb6616244179ab20c367785454e" Name="Diagram1">
+        <EntityTypeShape EntityType="hotel_dbModel.customer" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.employee" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.hotel" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.reservation" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.room" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.service" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.service_reservation" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotel_dbModel.user" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="hotel_dbModel.FK_customer_users" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_reservation_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_service_reservation_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_employee_users" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_service_reservation_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_room_hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_reservation_room" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_service_reservation_room" ManuallyRouted="false" />
+        <AssociationConnector Association="hotel_dbModel.FK_service_reservation_service" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -17,7 +17,7 @@ namespace WpfApp1 {
     /// Логика взаимодействия для ManagerWindow.xaml
     /// </summary>
     public partial class ManagerWindow : Window {
-        public ManagerWindow(hotelDbEntities db) {
+        public ManagerWindow() {
             InitializeComponent();
         }
     }

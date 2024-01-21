@@ -18,14 +18,14 @@ using System.Windows.Shapes;
 namespace WpfApp1 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
+    /// Server=localhost;Database=master;Trusted_Connection=True;
     /// </summary>
     public partial class MainWindow : Window {
-        readonly static string connectionString = 
-            "server=DESKTOP-3TTJHJR;Trusted_Connection=Yes;DataBase=hotel_db;";
+        readonly static string connectionString = "";
 
         public SqlConnection sqlConnection = new SqlConnection(connectionString);
-        hotelDbEntities db = new hotelDbEntities();
-        
+        hoteldbEntities db = new hoteldbEntities();
+
         public MainWindow() {
             InitializeComponent();
             LoginPanel.Visibility = Visibility.Visible;
@@ -39,19 +39,33 @@ namespace WpfApp1 {
             string password_hash = Encoding.ASCII.GetString(data);
 
 
-            /*var current_user = db.users.Where(
-                user_item => user_item.login == LoginTextBox.Text && 
+            App.CurrentUser = db.users.Where(
+                user_item => user_item.login == LoginTextBox.Text &&
                              user_item.password == password_hash
             ).FirstOrDefault();
-            if (current_user != null ) {
-                MessageBox.Show($"Добро пожаловать, {current_user.login}!");
-            } else {
+            if (App.CurrentUser != null)
+            {
+                MessageBox.Show($"Добро пожаловать, {App.CurrentUser.role}!");
+                
+                
+                switch (App.CurrentUser.role)
+                {
+                    case 0:
+                        new ClientWindow().Show();
+                        break;
+                    case 1:
+                        new ManagerWindow().Show();
+                        break;
+                    case 2:
+                        new AdminWindow().Show();
+                        break;
+                }
+                this.Close();
+            }
+            else
+            {
                 MessageBox.Show("Такого пользователя не существует!");
-            }*/
-            //new AdminWindow(db).Show();
-            //new ManagerWindow(db).Show();
-            new ClientWindow().Show();
-            this.Close();
+            }
         }
 
         // Регистрация
@@ -75,6 +89,7 @@ namespace WpfApp1 {
             user newUser = new user {
                 login = newLoginBox.Text,
                 password = password_hash,
+                role = 0,
             };
             db.users.Add(newUser);
             db.SaveChanges();
